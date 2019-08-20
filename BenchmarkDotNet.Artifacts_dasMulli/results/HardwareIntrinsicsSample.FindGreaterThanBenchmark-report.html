@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>HardwareIntrinsicsSample.FindGreaterThanBenchmark-20190820-112850</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.11.5, OS=Windows 10.0.18362
+Intel Core i9-8950HK CPU 2.90GHz (Coffee Lake), 1 CPU, 5 logical and 5 physical cores
+.NET Core SDK=3.0.100-preview8-013656
+  [Host]     : .NET Core 3.0.0-preview8-28405-07 (CoreCLR 4.700.19.37902, CoreFX 4.700.19.40503), 64bit RyuJIT
+  DefaultJob : .NET Core 3.0.0-preview8-28405-07 (CoreCLR 4.700.19.37902, CoreFX 4.700.19.40503), 64bit RyuJIT
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>                                     Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Ratio</th><th>RatioSD</th><th>Rank</th>
+</tr>
+</thead><tbody><tr><td>IndexOfFirstElementGreaterOrEqualToLimit_Naive</td><td>34.489 us</td><td>0.5271 us</td><td>0.4930 us</td><td>1.00</td><td>0.00</td><td>2</td>
+</tr><tr><td>IndexOfFirstElementGreaterOrEqualToLimit_LinqLike</td><td>476.396 us</td><td>3.9173 us</td><td>3.4726 us</td><td>13.81</td><td>0.25</td><td>3</td>
+</tr><tr><td>IndexOfFirstElementGreaterOrEqualToLimit_Avx</td><td>6.353 us</td><td>0.1240 us</td><td>0.1273 us</td><td>0.18</td><td>0.00</td><td>1</td>
+</tr></tbody></table>
+</body>
+</html>

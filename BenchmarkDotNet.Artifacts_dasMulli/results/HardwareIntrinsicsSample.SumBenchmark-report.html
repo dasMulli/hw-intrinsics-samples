@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>HardwareIntrinsicsSample.SumBenchmark-20190820-112952</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.11.5, OS=Windows 10.0.18362
+Intel Core i9-8950HK CPU 2.90GHz (Coffee Lake), 1 CPU, 5 logical and 5 physical cores
+.NET Core SDK=3.0.100-preview8-013656
+  [Host]     : .NET Core 3.0.0-preview8-28405-07 (CoreCLR 4.700.19.37902, CoreFX 4.700.19.40503), 64bit RyuJIT
+  DefaultJob : .NET Core 3.0.0-preview8-28405-07 (CoreCLR 4.700.19.37902, CoreFX 4.700.19.40503), 64bit RyuJIT
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>               Method</th><th>N</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Ratio</th><th>RatioSD</th><th>Rank</th>
+</tr>
+</thead><tbody><tr><td>SumNaive</td><td>100003</td><td>94.841 us</td><td>1.8769 us</td><td>1.8433 us</td><td>1.00</td><td>0.00</td><td>4</td>
+</tr><tr><td>SumUsingLinq</td><td>100003</td><td>409.957 us</td><td>4.0358 us</td><td>3.7751 us</td><td>4.32</td><td>0.11</td><td>5</td>
+</tr><tr><td>SumUsingSystemNumerics</td><td>100003</td><td>12.957 us</td><td>0.2524 us</td><td>0.2907 us</td><td>0.14</td><td>0.00</td><td>3</td>
+</tr><tr><td>SumUsingAvx</td><td>100003</td><td>12.327 us</td><td>0.2289 us</td><td>0.2141 us</td><td>0.13</td><td>0.00</td><td>2</td>
+</tr><tr><td>SumUsingAvxAlignedPipelined</td><td>100003</td><td>5.654 us</td><td>0.0638 us</td><td>0.0533 us</td><td>0.06</td><td>0.00</td><td>1</td>
+</tr></tbody></table>
+</body>
+</html>
