@@ -5,6 +5,7 @@ using BenchmarkDotNet.Attributes;
 namespace HardwareIntrinsicsSample
 {
     [RankColumn]
+    [ShortRunJob]
     public partial class SumBenchmark
     {
         internal float[] values;

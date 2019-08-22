@@ -4,6 +4,7 @@ using BenchmarkDotNet.Attributes;
 namespace HardwareIntrinsicsSample
 {
     [RankColumn]
+    [ShortRunJob]
     public partial class FindGreaterThanBenchmark
     {
         internal float[] values;
