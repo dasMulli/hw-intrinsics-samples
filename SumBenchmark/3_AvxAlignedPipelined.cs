@@ -45,12 +45,12 @@ namespace HardwareIntrinsicsSample
                         for(long i = alignmentOffset; i < pipelineVectorizableLength; i += 4*(long)Vector256<float>.Count)
                         {
                             var valuesVector1 = Avx.LoadAlignedVector256(valuesPtr + i);
-                            var valuesVector2 = Avx.LoadAlignedVector256(valuesPtr + i + Vector256<float>.Count);
-                            var valuesVector3 = Avx.LoadAlignedVector256(valuesPtr + i + 2*Vector256<float>.Count);
-                            var valuesVector4 = Avx.LoadAlignedVector256(valuesPtr + i + 3*Vector256<float>.Count);
                             tempVector1 = Avx.Add(tempVector1, valuesVector1);
+                            var valuesVector2 = Avx.LoadAlignedVector256(valuesPtr + i + Vector256<float>.Count);
                             tempVector2 = Avx.Add(tempVector2, valuesVector2);
+                            var valuesVector3 = Avx.LoadAlignedVector256(valuesPtr + i + 2*Vector256<float>.Count);
                             tempVector3 = Avx.Add(tempVector3, valuesVector3);
+                            var valuesVector4 = Avx.LoadAlignedVector256(valuesPtr + i + 3*Vector256<float>.Count);
                             tempVector4 = Avx.Add(tempVector4, valuesVector4);
                         }
 
